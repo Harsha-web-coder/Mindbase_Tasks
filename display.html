@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+      font-size: 24px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <h1>Details:</h1>
+  <table>
+    <tr>
+      <th>Full name</th>
+      <th>Age</th>
+      <th>Date</th>
+      <th>Class</th>
+    </tr>
+    <tr>
+      <td id="fullName"></td>
+      <td id="age"></td>
+      <td id="date"></td>
+      <td id="class"></td>
+    </tr>
+  </table>
+  
+  <script>
+    // Retrieve submitted values from URL query string
+    const urlParams = new URLSearchParams(window.location.search);
+    const fullName = urlParams.get('name');
+    const age = urlParams.get('age');
+    const date = urlParams.get('date');
+    const classNumber = urlParams.get('class');
+    
+    // Set the values in the HTML table
+    document.getElementById('fullName').textContent = fullName;
+    document.getElementById('age').textContent = age;
+    document.getElementById('date').textContent = date;
+    document.getElementById('class').textContent = 'Class ' + classNumber;
+  </script>
+</body>
+</html>
