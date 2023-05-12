@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <p>The paragraph is : The brown dog jumps over the lazy buffalo</p>
+  <p>Enter string to replace</p>
+  <script>
+    function replaceString() {
+      // Sample paragraph
+      let paragraph = "The brown dog jumps over the lazy buffalo";
+
+      // User input
+      let searchStr = prompt("Enter the string to search:");
+      let replaceStr = prompt("Enter the string to replace with:");
+
+      // Replace the string in the paragraph
+      let modifiedParagraph = paragraph.replace(searchStr, replaceStr);
+
+      // Output the modified paragraph
+      console.log(modifiedParagraph);
+
+      // Display the modified paragraph on the web page
+      document.getElementById("result").textContent = modifiedParagraph;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="replaceString()">Replace String</button>
+  <p id="result"></p>
+</body>
+</html>
+<!--
+I have used prompt to get user input keyword and written a js function such that it replaces keyword
+-->
