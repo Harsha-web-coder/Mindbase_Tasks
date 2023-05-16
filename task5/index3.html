@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DATA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .form-container {
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    button {
+      font-size: 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d32f2f;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="date"]:focus,
+    select:focus {
+      outline: none;
+      border-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FORM</h1>
+
+    <div class="form-container">
+      <form id="dataForm">
+	   
+        <table>
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Age</th>
+              <th>Date</th>
+              <th>Class</th>
+            </tr>
+			
+          </thead>
+          <tbody>
+
+            <!-- Generate 30 rows -->
+            <tr>
+					  
+              <td><input type="text" name="full_name[]" pattern="[A-Za-z]+" required></td>
+              <td><input type="number" name="age[]" min="0" max="120" required></td>
+              <td><input type="date" name="date[]" required></td>
+              <td>
+                <select name="class[]">
+                  <option value="">Select class</option>
+                  <option value="1" selected>Class 1</option>
+                  <option value="2">Class 2</option>
+                  <option value="3">Class 3</option>
+                  <option value="4">Class 4</option>
+                  <option value="5">Class 5</option>
+                  <option value="6">Class 6</option>
+                  <option value="7">Class 7</option>
+                  <option value="8">Class 8</option>
+                  <option value="9">Class 9</option>
+                  <option value="10">Class 10</option>
+                </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <button type="submit">SUBMIT</button>
+    </div>
+  </form>
+</div>
+<h1>TABLE</h1>
+<table id="displayTable">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Age</th>
+      <th>Date</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Table rows will be inserted here -->
+  </tbody>
+</table>
+
+  <script>
+var dataForm = document.getElementById('dataForm');
+var displayTableBody = document.getElementById('displayTable').getElementsByTagName('tbody')[0];
+var editRowIndex = -1; // Track the index of the row being edited (-1 means no row is being edited)
+
+var submitButton = document.querySelector('button[type="submit"]');
+var submitButtonText = submitButton.textContent; // Store the original button label
+
+dataForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  if (editRowIndex === -1) {
+    // Add a new row when not in edit mode
+    var tableRow = document.createElement('tr');
+
+    var fullNameInput = document.createElement('td');
+    fullNameInput.textContent = dataForm.elements['full_name[]'].value;
+    tableRow.appendChild(fullNameInput);
+
+    var ageInput = document.createElement('td');
+    ageInput.textContent = dataForm.elements['age[]'].value;
+    tableRow.appendChild(ageInput);
+
+    var dateInput = document.createElement('td');
+    dateInput.textContent = dataForm.elements['date[]'].value;
+    tableRow.appendChild(dateInput);
+
+    var classInput = document.createElement('td');
+    classInput.textContent = dataForm.elements['class[]'].value;
+    tableRow.appendChild(classInput);
+
+    var editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    editButton.addEventListener('click', function() {
+      editRowIndex = Array.from(displayTableBody.children).indexOf(tableRow); // Get the index of the row being edited
+      dataForm.elements['full_name[]'].value = fullNameInput.textContent;
+      dataForm.elements['age[]'].value = ageInput.textContent;
+      dataForm.elements['date[]'].value = dateInput.textContent;
+      dataForm.elements['class[]'].value = classInput.textContent;
+
+      submitButton.textContent = 'Update'; // Change button label to "Update"
+    });
+    tableRow.appendChild(editButton);
+
+    var deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', function() {
+      tableRow.remove(); // Remove the row from the table
+    });
+    tableRow.appendChild(deleteButton);
+
+    displayTableBody.appendChild(tableRow);
+  } else {
+    // Update the existing row when in edit mode
+    var editedRow = displayTableBody.children[editRowIndex];
+
+    editedRow.children[0].textContent = dataForm.elements['full_name[]'].value;
+    editedRow.children[1].textContent = dataForm.elements['age[]'].value;
+    editedRow.children[2].textContent = dataForm.elements['date[]'].value;
+    editedRow.children[3].textContent = dataForm.elements['class[]'].value;
+
+    // Clear the edit mode and reset the form
+    editRowIndex = -1;
+    dataForm.reset();
+
+    submitButton.textContent = submitButtonText; // Restore the original button label
+  }
+});
+
+
+  </script>
+
+</body>
+</html>
