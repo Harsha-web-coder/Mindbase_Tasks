@@ -1,0 +1,48 @@
+/*
+JavaScript was invented by Brendan Eich in 1995.
+the Mozilla foundation continued to develop JavaScript for the Firefox browser.
+JS first name LiveScript changed to JavaScript
+Web Language
+Light Weight
+Famous
+Easy to learn
+Open platform
+Cross platform
+Structured Programming Language
+OOPs language
+Case sensitive language
+--
+Applications:
+Server application
+manipulating HTML pages
+messages/notifications
+Gaming
+Ecommerce website functionality
+Attractive Animation
+Backend data loading
+form validation
+--
+In JavaScript you cannot use these reserved words as variables, labels, or function names:
+abstract	arguments	await*	boolean
+break	byte	case	catch
+char	class*	const	continue
+debugger	default	delete	do
+double	else	enum*	eval
+export*	extends*	false	final
+finally	float	for	function
+goto	if	implements	import*
+in	instanceof	int	interface
+let*	long	native	new
+null	package	private	protected
+public	return	short	static
+super*	switch	synchronized	this
+throw	throws	transient	true
+try	typeof	var	void
+volatile	while	with	yield
+--
+Output function:
+document.write()
+console.log()
+Input function:
+window.prompt()
+*/
