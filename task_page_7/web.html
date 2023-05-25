@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    .tags-container {
+      display: flex;
+      margin-bottom: 1px;
+    }
+    .p1 {
+      margin: 5px 0;
+      padding: 0;
+      text-align: left;
+    }
+    .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: green;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px green;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: #f1f1f1;
+      margin: 10px;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .box div {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .box label {
+      display: block;
+    }
+
+    .box img {
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+    }
+
+    ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+      display: flex;
+    }
+
+    ul.navbar li a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    ul.navbar li a:hover {
+      background-color: #ddd;
+    }
+    .breadcrumb {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: inline-block; /* Display the breadcrumb inline */
+    }
+
+    .breadcrumb li {
+      display: inline;
+      margin-right: 5px;
+    }
+
+    .breadcrumb li:not(:last-child):after {
+      content: ">";
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    /* CSS for the "create new" dropdown */
+    .dropdown {
+      position: absolute; /* Position the dropdown absolutely */
+      top: 0;
+      right: 0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown1 {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown1-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown1:hover .dropdown1-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML for the navigation bar -->
+  <ul class="navbar">
+    <li><a href="#">Platform</a></li>
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">Alerts</a></li>
+    <li><a href="#">Reports</a></li>
+
+    <div class="dropdown1">
+        <span>Administration</span>
+        <div class="dropdown1-content">
+          <a href="#">Option 1</a>
+        </div>
+      </div>
+
+      <div class="dropdown1">
+        <span>Setup</span>
+        <div class="dropdown1-content">
+          <a href="#">Option 1</a>
+        </div>
+      </div>
+    <li><a href="#">Reports</a></li>
+    <li><a href="#">search icon</a></li>
+    <li><a href="#">notification icon</a></li>
+    <div class="dropdown1">
+        <span>Location</span>
+        <div class="dropdown1-content">
+          <a href="#">Option 1</a>
+        </div>
+      </div>
+      <div class="dropdown1">
+        <span>Admin</span>
+        <div class="dropdown1-content">
+          <a href="#">Option 1</a>
+        </div>
+      </div>
+  </ul>
+  
+  <div style="position: relative;">
+
+    <ul class="breadcrumb">
+      <li><a href="#">Administration</a></li>
+      <li><a href="#">Device Management</a></li>
+      <li><a href="#">Manage Devices</a></li>
+    </ul>
+
+
+    <div class="dropdown">
+      <span>Create New</span>
+      <div class="dropdown-content">
+        <a href="#">Option 1</a>
+      </div>
+    </div>
+  </div>
+  <div class="tags-container">
+    <img src="images/box1.png" alt="box" width="20" height="40">
+    <img src="images/view2.png" alt="view2"width="30" height="40">
+    <img src="images/dot.png" alt="dot"width="30" height="40">
+    <img src="images/search.png" alt="dot"width="30" height="40">
+    <p>Search</p>
+    <img src="images/icons2.png" alt="icons2">
+
+  </div>
+  </div>
+  <div class="container">
+    <div class="box">
+    <p1 style="text-align:left; color:lightseagreen;">ChemicalPersona_Re..&emsp;&emsp;<span style="color:darkgreen;">Active</span></p1>
+      <p1 style="text-align:left;">Device ID&emsp;&emsp;&emsp;#vdsbvkdsbvhj..</p1>
+      <p1 style="text-align:left;">Device Type&emsp;&emsp;&emsp;&emsp;TE-RTM</p1>
+      <p1 style="text-align:left;color: darkblue;">ASSOCIATIONS</p1>
+      <p1 style="text-align:left;">Customer&emsp;&emsp;NoAssociations</p1>
+      <p1 style="text-align:left;color: darkblue;">ACTION UPDATES</p1>
+      <img src="images/eye.png" alt="eye">
+      <div>
+        <div>
+          <input type="checkbox" id="checkbox1">
+          &emsp;
+        </div>
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+          &emsp;
+        <div>
+          <p>Active</p>
+          &emsp;
+          <img src="images/edit.png" alt="edit">
+          <img src="images/delete.png" alt="delete">
+          <img src="images/more.png" alt="more">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <p1 style="text-align:left; color:lightseagreen;">NewDevice_RealTime&emsp;&emsp;<span style="color:darkgreen;">Active</span></p1>
+
+          <p1 style="text-align:left;">Device ID&emsp;&emsp;&emsp;#vdsbvkdsbvhj..</p1>
+          <p1 style="text-align:left;">Device Type&emsp;&emsp;&emsp;&emsp;TE-RTM</p1>
+          <p1 style="text-align:left;color: darkblue;">ASSOCIATIONS</p1>
+          <p1 style="text-align:left;">Customer&emsp;&emsp;NoAssociations</p1>
+          <p1 style="text-align:left;color: darkblue;">ACTION UPDATES</p1>
+          <img src="images/eye.png" alt="eye">
+          <div>
+            <div>
+              <input type="checkbox" id="checkbox1">
+              &emsp;
+            </div>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+              &emsp;
+            <div>
+              <p>Active</p>
+              &emsp;
+              <img src="images/edit.png" alt="edit">
+              <img src="images/delete.png" alt="delete">
+              <img src="images/more.png" alt="more">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <p1 style="text-align:left; color:lightseagreen;">TESiteAsoc-Connect&emsp;&emsp;<span style="color:darkgreen;">Active</span></p1>
+
+              <p1 style="text-align:left;">Device ID&emsp;&emsp;&emsp;#vdsbvkdsbvhj..</p1>
+              <p1 style="text-align:left;">Device Type&emsp;&emsp;&emsp;&emsp;TE-RTM</p1>
+              <p1 style="text-align:left;color: darkblue;">ASSOCIATIONS</p1>
+              <p1 style="text-align:left;">Customer&emsp;&emsp;NoAssociations</p1>
+              <p1 style="text-align:left;color: darkblue;">ACTION UPDATES</p1>
+              <img src="images/eye.png" alt="eye">
+              <div>
+                <div>
+                  <input type="checkbox" id="checkbox1">
+                  &emsp;
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                  &emsp;
+                <div>
+                  <p>Active</p>
+                  &emsp;
+                  <img src="images/edit.png" alt="edit">
+                  <img src="images/delete.png" alt="delete">
+                  <img src="images/more.png" alt="more">
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+                <div class="box">
+                    <p1 style="text-align:left; color:lightseagreen;">UMSADevice3&emsp;&emsp;<span style="color:darkgreen;">Active</span></p1>
+                  <p1 style="text-align:left;">Device ID&emsp;&emsp;&emsp;#vdsbvkdsbvhj..</p1>
+                  <p1 style="text-align:left;">Device Type&emsp;&emsp;&emsp;&emsp;TE-RTM</p1>
+                  <p1 style="text-align:left;color: darkblue;">ASSOCIATIONS</p1>
+                  <p1 style="text-align:left;">Customer&emsp;&emsp;NoAssociations</p1>
+                  <p1 style="text-align:left;color: darkblue;">ACTION UPDATES</p1>
+                  <img src="images/eye.png" alt="eye">
+                  <div>
+                    <div>
+                      <input type="checkbox" id="checkbox1">
+                      &emsp;
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                      </label>
+                      &emsp;
+                    <div>
+                      <p>Active</p>
+                      &emsp;
+                      <img src="images/edit.png" alt="edit">
+                      <img src="images/delete.png" alt="delete">
+                      <img src="images/more.png" alt="more">
+                    </div>
+                  </div>
+                </div>
+  </div>
+
+</body>
+</html>
