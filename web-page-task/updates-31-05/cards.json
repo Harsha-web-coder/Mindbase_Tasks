@@ -1,0 +1,33 @@
+{
+    "cardsList" : [
+        {
+            "title" : "Chemical Persona",
+            "isActive" : true,
+            "DeviceID" : "#vdsbvkdsbvhj..",
+            "deviceType" : "TE-RTM",            
+            "Customer" : "No Assocications"
+        },
+        {
+            "title" : "Chemical Persona",
+            "isActive" : true,
+            "DeviceID" : "#vdsbvkdsbvhj..",
+            "deviceType" : "TE-RTM",            
+            "Customer" : "No Assocications"
+        },
+        {
+            "title" : "Chemical Persona",
+            "isActive" : true,
+            "DeviceID" : "#vdsbvkdsbvhj..",
+            "deviceType" : "TE-RTM",            
+            "Customer" : "No Assocications"
+        },
+        {
+            "title" : "Chemical Persona",
+            "isActive" : true,
+            "DeviceID" : "#vdsbvkdsbvhj..",
+            "deviceType" : "TE-RTM",            
+            "Customer" : "No Assocications"
+        }    
+
+    ]
+}
