@@ -1,0 +1,175 @@
+.navbar-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+.drp{
+  padding-right: 5px;
+  
+}
+
+.image {
+  margin-bottom: 15px; 
+}
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-text {
+  margin-right: 10px;
+}
+
+.navbar-divider {
+  border: none;
+  border-top: 1px solid #dee2e6;
+  margin: 10px 0;
+}
+.small-nav {
+height: 50px;
+font-size: 15px;
+padding: 8px;
+}
+/*
+.dropdown-menu {
+  background-color: #d1d1d1;
+  margin-top: 5px;
+}*/
+.single-line {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  position: relative;
+  z-index: 1;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.card-title-blue {
+color: #00008B;
+font-size: 15px;
+
+}
+.card-title-turquoise {
+color: #00CED1;
+font-size: 20px;
+}
+
+
+.red-line {
+width: 100%;
+height: 5px;
+background-color: red;
+margin-bottom: 5px;
+}
+.yellow-line {
+width: 100%;
+height: 5px;
+background-color: yellow;
+margin-bottom: 5px;
+}
+.form-check-input[type="checkbox"] {
+outline-color: rgb(110, 235, 110);
+box-shadow: 0 0 0 2px rgb(134, 239, 134);
+}
+.green-icon {
+color: green;
+font-size: 10px;
+}
+
+
+.active-text {
+color: green;
+font-size: 20px;
+
+}
+
+.green-circle {
+display: inline-block;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: green;
+margin-left: 3px;
+vertical-align: middle;
+}
+
+.small-icon {
+font-size: 16px;
+}
+
+.small-textbox1 {
+width: 5px; 
+height: 3px; 
+
+}
+
+.text-mowa{
+  font-size: 15px;
+}
+
+
+@media (max-width: 576px) {
+  .icon-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .directional-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: small;
+  }
+  .directional-icon-box {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.directional-icon-box {
+display: flex;
+align-items: center;
+background-color: #d1d1d1;
+
+}
+
+.directional-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 30px;
+height: 30px;
+background-color: #ffffff;
+border: 1px solid #d1d1d1;
+border-radius: 4px;
+}
+
+.page-text {
+font-size: 14px;
+margin: 0 10px;
+}
+
+
+
+.small-icon2 {
+  font-size: 25px;
+  padding: 5px;
+}
+.pad{
+  padding-bottom:4px;
+  padding-right: 2px;
+}
+
+.refresh-button {
+  height: 30px;
+  width: 60px;
+  
+  /*
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;*/
+  background-color: #d1d1d1;
+  
+}
+/*switch*/

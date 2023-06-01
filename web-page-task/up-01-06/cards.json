@@ -1,0 +1,33 @@
+{
+    "cardsList" : [
+        {
+            "title" : "Chemical Persona",
+            "isActive" : true,
+            "DeviceID" : "#vdsbvkdsbvhj..",
+            "deviceType" : "TE-RTM",            
+            "Customer" : "No Assocications"
+        },
+        {
+            "title" : "NewDevice_RealTime",
+            "isActive" : true,
+            "DeviceID" : "#vdsbvkdsbvhj..",
+            "deviceType" : "TE-RTM",            
+            "Customer" : "No Assocications"
+        },
+        {
+            "title" : "TESiteAsoc-Connect",
+            "isActive" : true,
+            "DeviceID" : "#vdsbvkdsbvhj..",
+            "deviceType" : "TE-RTM",            
+            "Customer" : "No Assocications"
+        },
+        {
+            "title" : "UMSADevice3",
+            "isActive" : true,
+            "DeviceID" : "#vdsbvkdsbvhj..",
+            "deviceType" : "TE-RTM",            
+            "Customer" : "No Assocications"
+        }    
+
+    ]
+}
