@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+
+    <div ng-controller="myController">
+        <h1>{{ greeting }}</h1>
+
+        <input type="text" ng-model="name" placeholder="Enter your name">
+        <button ng-click="sayHello()">Say Hello</button>
+
+        <ul>
+            <li ng-repeat="item in items">{{ item }}</li>
+        </ul>
+    </div>
+
+    <script>
+
+        var app = angular.module('myApp', []);
+
+
+        app.controller('myController', function($scope) {
+            // Set the initial greeting
+            $scope.greeting = 'Welcome to AngularJS';
+
+
+            $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+
+            $scope.sayHello = function() {
+                if ($scope.name) {
+                    $scope.greeting = 'Hello, ' + $scope.name + '!';
+                }
+            };
+        });
+    </script>
+<!--
+var app = angular.module('myApp', []);: This creates an AngularJS module named 'myApp'. A module is a container for different parts of an AngularJS application, such as controllers, directives, and services.
+
+app.controller('myController', function($scope) { ... });: This defines a controller named 'myController' and associates it with the 'myApp' module. The controller function is where you define the behavior and data for a specific part of your application.
+
+$scope is a special object that serves as the glue between the controller and the HTML. You can attach properties and functions to $scope, and they become accessible within the HTML.
+
+$scope.greeting = 'Welcome to AngularJS';: This sets the initial value of the greeting property on $scope. The initial greeting will be displayed in the <h1> element.
+
+$scope.items = ['Item 1', 'Item 2', 'Item 3'];: This initializes the items array on $scope with three items.
+
+$scope.sayHello = function() { ... }: This defines the sayHello function on $scope. When called, it checks if a name is entered ($scope.name) and updates the greeting accordingly.
+-->
+
+</body>
+
+</html>
