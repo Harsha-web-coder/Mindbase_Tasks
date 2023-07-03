@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manager</title>
+</head>
+<body>
+    <h2>Manager</h2>
+    {% for order in orders %}
+        <div>
+            <h3>Order ID: {{ order.id }}</h3>
+            <p>User ID: {{ order.user_id }}</p>
+            <p>Item ID: {{ order.item_id }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>
